@@ -1,3 +1,27 @@
-<p>
-  pets works!
-</p>
+<h1 [textContent]="user.name + '\'s pets'"></h1>
+<div class="add-pet">
+  <input
+  [(ngModel)]="newPet">
+  <button
+    (click)="addPet()">Add
+  </button>
+</div>
+<table
+[hidden]="!pets.length">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pet of pets">
+    <td [textContent]="pet.name">
+    </td>
+    <td>
+      <button
+        (click)="deletePet(pet)">DELETE</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

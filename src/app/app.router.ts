@@ -3,8 +3,15 @@ import {UsersComponent} from './components/users/users.component';
 import {PetsComponent} from './components/pets/pets.component'
 
 export const appRoutes: Routes = [
-  {path: 'users', component: UsersComponent},
-  {path: 'pets', component: PetsComponent},
+  {
+    path: 'users',
+    component: UsersComponent
+  },
+
+  {
+    path: 'pets/:id',
+    component: PetsComponent,
+  },
 
   {
     path: '',

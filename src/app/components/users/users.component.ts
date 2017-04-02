@@ -8,13 +8,19 @@ import {UsersService} from './users.service';
 })
 export class UsersComponent implements OnInit {
   private users: any;
+  public newUser = '';
 
   constructor(private service: UsersService) {
     this.users = service.getUsers();
   }
 
+  addUser() {
+    this.service.addUser(this.newUser);
+    this.newUser = '';
+  }
+
   delete(user) {
-    this.service.deleteUser(user)
+    this. users = this.service.deleteUser(user)
   }
 
   ngOnInit() {

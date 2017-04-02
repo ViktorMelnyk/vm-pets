@@ -1,16 +1,24 @@
-<h1>Users</h1>
+<h1>All Users</h1>
+<div class="add-user">
+  <input
+  [(ngModel)]="newUser">
+  <button
+    (click)="addUser()">Add
+  </button>
+</div>
 <table>
   <thead>
       <tr>
-        <th>User</th>
-        <th>Count</th>
+        <th>Name</th>
+        <th>Pets Count</th>
+        <th></th>
       </tr>
   </thead>
   <tbody>
   <tr *ngFor="let user of users">
     <td
     [textContent]="user.name"
-    [routerLink]="'/pets'">
+    [routerLink]="'/pets/' + user.id">
 
     </td>
     <td [textContent]="user.count"></td>

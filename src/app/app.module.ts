@@ -7,6 +7,7 @@ import {appRoutes} from './app.router';
 import {UsersComponent} from './components/users/users.component';
 import {PetsComponent} from './components/pets/pets.component';
 import {UsersService} from './components/users/users.service';
+import {PetsService} from './components/pets/pets.service';
 
 import {AppComponent} from './app.component';
 
@@ -23,7 +24,7 @@ import {AppComponent} from './app.component';
     RouterModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UsersService],
+  providers: [UsersService, PetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
