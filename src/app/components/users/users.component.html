@@ -1,0 +1,23 @@
+<h1>Users</h1>
+<table>
+  <thead>
+      <tr>
+        <th>User</th>
+        <th>Count</th>
+      </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td
+    [textContent]="user.name"
+    [routerLink]="'/pets'">
+
+    </td>
+    <td [textContent]="user.count"></td>
+    <td>
+      <button
+      (click)="delete(user)">DELETE</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

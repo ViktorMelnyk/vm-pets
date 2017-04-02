@@ -1,20 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
+import {appRoutes} from './app.router';
+import {UsersComponent} from './components/users/users.component';
+import {PetsComponent} from './components/pets/pets.component';
+import {UsersService} from './components/users/users.service';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersComponent,
+    PetsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
